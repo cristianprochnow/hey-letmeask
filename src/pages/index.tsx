@@ -6,6 +6,7 @@ import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
+import { Input } from '../components/Input'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
@@ -41,7 +42,7 @@ export default function Home() {
             ou entre em uma sala
           </div>
           <form>
-            <input
+            <Input
               type="text"
               placeholder="Digite o código da sala"
             />

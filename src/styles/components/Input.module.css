@@ -1,0 +1,17 @@
+.input {
+  height: 5rem;
+  padding: 0 1.6rem;
+  border: .1rem solid var(--gray-medium);
+  border-radius: .8rem;
+  color: var(--gray-medium);
+  transition: border-color .2s;
+}
+
+.input:hover {
+  border-color: var(--gray-dark);
+}
+
+.input:focus {
+  border-color: var(--purple);
+  outline-color: var(--purple);
+}
