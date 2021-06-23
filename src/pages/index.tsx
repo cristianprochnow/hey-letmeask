@@ -5,6 +5,7 @@ import { FiLogIn } from 'react-icons/fi'
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
+import { Button } from '../components/Button'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
             src={logoImg}
             alt="Letmeask logo"
           />
-          <button>
+          <Button>
             <span>
               <Image
                 src={googleIconImg}
@@ -35,7 +36,7 @@ export default function Home() {
               />
             </span>
             Crie sua conta com o Google
-          </button>
+          </Button>
           <div className={styles.separator}>
             ou entre em uma sala
           </div>
@@ -44,12 +45,12 @@ export default function Home() {
               type="text"
               placeholder="Digite o código da sala"
             />
-            <button>
+            <Button>
               <FiLogIn
                 size={20}
               />
               Entrar na sala
-            </button>
+            </Button>
           </form>
         </div>
       </main>

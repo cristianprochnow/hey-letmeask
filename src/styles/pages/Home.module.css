@@ -48,22 +48,8 @@
 }
 
 .mainContent div > button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5rem;
-  margin-top: 7.2rem;
-  gap: 1.2rem;
-  border: 0;
-  border-radius: .8rem;
   background-color: var(--danger);
-  color: var(--white-details);
-  font-weight: 500;
-  transition: background-color .2s;
-}
-
-.mainContent div > button:hover {
-  background-color: var(--danger-hover);
+  margin-top: 7.2rem;
 }
 
 .mainContent div > button span {
@@ -84,24 +70,6 @@
   border: .1rem solid var(--gray-medium);
   border-radius: .8rem;
   color: var(--gray-medium);
-}
-
-.mainContent div form button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 5rem;
-  gap: 1.2rem;
-  border: 0;
-  border-radius: .8rem;
-  background-color: var(--purple);
-  color: var(--white-details);
-  font-weight: 500;
-  transition: background-color .2s;
-}
-
-.mainContent div form button:hover {
-  background-color: var(--purple-hover);
 }
 
 .separator {
