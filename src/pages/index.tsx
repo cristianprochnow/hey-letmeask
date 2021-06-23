@@ -2,6 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { FiLogIn } from 'react-icons/fi'
 
+import illustrationImg from '../assets/images/illustration.svg'
+import logoImg from '../assets/images/logo.svg'
+import googleIconImg from '../assets/images/google-icon.svg'
 import styles from '../styles/pages/Home.module.css'
 
 export default function Home() {
@@ -12,29 +15,25 @@ export default function Home() {
       </Head>
       <aside className={styles.asideContent}>
         <Image
-          src="/images/illustration.svg"
+          src={illustrationImg}
           alt="Imagem que ilustra perguntas e respostas"
-          width="100%"
-          height="100%"
         />
         <h1>Toda pergunta tem uma resposta.</h1>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas</p>
+        <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
       </aside>
       <main className={styles.mainContent}>
         <div>
           <Image
-            src="/images/logo.svg"
+            src={logoImg}
             alt="Letmeask logo"
-            width="100%"
-            height="100%"
           />
           <button>
-            <Image
-              src="/images/google-icon.svg"
-              alt="Google icon"
-              width="100%"
-              height="100%"
-            />
+            <span>
+              <Image
+                src={googleIconImg}
+                alt="Google icon"
+              />
+            </span>
             Crie sua conta com o Google
           </button>
           <div className={styles.separator}>
