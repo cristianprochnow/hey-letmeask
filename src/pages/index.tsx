@@ -2,13 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { FiLogIn } from 'react-icons/fi'
 
-import illustrationImg from '../assets/images/illustration.svg'
+import styles from '../styles/pages/Home.module.css'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
-import styles from '../styles/pages/Home.module.css'
 import { Separator } from '../components/Separator'
+import { AsideContent } from '../components/AsideContent'
 
 export default function Home() {
   return (
@@ -16,14 +16,7 @@ export default function Home() {
       <Head>
         <title>Início | Hey! LetMeAsk</title>
       </Head>
-      <aside className={styles.asideContent}>
-        <Image
-          src={illustrationImg}
-          alt="Imagem que ilustra perguntas e respostas"
-        />
-        <h1>Toda pergunta tem uma resposta.</h1>
-        <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
-      </aside>
+      <AsideContent />
       <main className={styles.mainContent}>
         <div>
           <Image
