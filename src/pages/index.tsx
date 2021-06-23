@@ -8,6 +8,7 @@ import googleIconImg from '../assets/images/google-icon.svg'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
 import styles from '../styles/pages/Home.module.css'
+import { Separator } from '../components/Separator'
 
 export default function Home() {
   return (
@@ -38,9 +39,7 @@ export default function Home() {
             </span>
             Crie sua conta com o Google
           </Button>
-          <div className={styles.separator}>
-            ou entre em uma sala
-          </div>
+          <Separator title="ou entre em uma sala" />
           <form>
             <Input
               type="text"
