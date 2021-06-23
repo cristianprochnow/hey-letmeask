@@ -1,0 +1,41 @@
+:root {
+  --black: #29292E;
+  --shadow: #050206;
+  --purple: #835AFD;
+  --purple-hover: #6F4BD8;
+  --danger: #E73F5D;
+  --danger-hover: #D73754;
+  --pink-dark: #E559F9;
+  --pink-light: #D67EE2;
+  --gray-dark: #737380;
+  --gray-medium: #A8A8B3;
+  --gray-medium-hover: #7E7E86;
+  --gray-light: #DBDCDD;
+  --gray-light-hover: #CECECE;
+  --white-background: #F8F8F8;
+  --white-details: #FEFEFE;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--white-background);
+  color: var(--black);
+}
+
+@media(max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
+}
