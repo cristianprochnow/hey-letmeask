@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 import { FiLogIn } from 'react-icons/fi'
 
 import styles from '../styles/pages/Home.module.css'
@@ -11,6 +12,16 @@ import { Separator } from '../components/Separator'
 import { AsideContent } from '../components/AsideContent'
 
 export default function Home() {
+  const router = useRouter()
+
+  function handleSignUpWithGoogle() {
+    navigateToNewRoom()
+
+    function navigateToNewRoom() {
+      router.push('/rooms/new')
+    }
+  }
+
   return (
     <div className={styles.homePage}>
       <Head>
@@ -23,7 +34,7 @@ export default function Home() {
             src={logoImg}
             alt="Letmeask logo"
           />
-          <Button>
+          <Button onClick={handleSignUpWithGoogle}>
             <span>
               <Image
                 src={googleIconImg}

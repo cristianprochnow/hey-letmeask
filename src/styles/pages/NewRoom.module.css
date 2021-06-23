@@ -23,7 +23,7 @@
 }
 
 .mainContent div > strong {
-  font: 700 2.4rem 'Poppins';
+  font: 700 2.4rem 'Poppins', sans-serif;
   text-align: center;
   line-height: 3.2rem;
   margin: 6.4rem 0 3.2rem 0;

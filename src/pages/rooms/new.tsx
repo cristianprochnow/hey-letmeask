@@ -2,11 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import styles from '../styles/pages/NewRoom.module.css'
-import logoImg from '../assets/images/logo.svg'
-import { Button } from '../components/Button'
-import { Input } from '../components/Input'
-import { AsideContent } from '../components/AsideContent'
+import styles from '../../styles/pages/NewRoom.module.css'
+import logoImg from '../../assets/images/logo.svg'
+import { Button } from '../../components/Button'
+import { Input } from '../../components/Input'
+import { AsideContent } from '../../components/AsideContent'
 
 export default function NewRoom() {
   return (

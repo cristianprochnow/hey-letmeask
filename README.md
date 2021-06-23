@@ -25,7 +25,7 @@
  ## 📚 What I learned
  - [x] Use and implement `Firebase` for web development
  - [x] Set up `firebase` configuration
- - [x] Use `styled-components` with Server-Side Rendering
+ - [x] Some mobile-first principles
 
 # ⚡ Getting Started
  ## 🧰 Prerequisites
