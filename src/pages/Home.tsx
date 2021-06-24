@@ -8,12 +8,15 @@ import { Button } from '../components/Button'
 import { Input } from '../components/Input'
 import { Separator } from '../components/Separator'
 import { AsideContent } from '../components/AsideContent'
+import { useAuth } from '../hooks/useAuth'
 
 export function Home() {
   const history = useHistory()
+  const authentication = useAuth()
 
-  function handleSignUpWithGoogle() {
-    navigateToNewRoom()
+  async function handleSignUpWithGoogle() {
+    await authentication.signIn()
+    // navigateToNewRoom()
 
     function navigateToNewRoom() {
       history.push('/rooms/new')

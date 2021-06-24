@@ -1,8 +1,11 @@
-import { Routes } from './routes'
 import './styles/global.css'
+import { Routes } from './routes'
+import { AuthProvider } from './contexts/Auth'
 
 export function App() {
   return (
-    <Routes />
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
   )
 }

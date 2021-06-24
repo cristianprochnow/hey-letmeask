@@ -1,37 +1,53 @@
 import { createContext, ReactNode, useState } from 'react'
 
-import { auth, firebase } from '../services/firebase'
+import { signInWithGoogle } from '../libs/firebase'
+import { error as logError } from '../utils/error'
 
 type User = {
+  id: string
   name: string
+  avatar: string
 }
-
 type AuthContextType = {
   user: User | undefined
-  signInWithGoogle: () => Promise<void>
+  isLoggedIn: boolean
+  signIn: () => Promise<void>
 }
-export const AuthContext = createContext({} as AuthContextType)
-
 type AuthProviderProps = {
   children: ReactNode
 }
+
+export const AuthContext = createContext({} as AuthContextType)
+
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User)
 
-  async function signInWithGoogle() {
-    const authProvider = new firebase.auth.GoogleAuthProvider()
-
+  async function signIn() {
     try {
-      const authResponse = await auth.signInWithPopup(authProvider)
+      const { name, avatar, id } = await signInWithGoogle()
 
-      console.log(authResponse)
+      console.table({
+        name,
+        avatar,
+        id
+      })
+
+      setUser({
+        id,
+        name,
+        avatar
+      })
     } catch (error) {
-      throw new Error('An error ocurred at signin, please try again later.')
+      logError(error)
     }
   }
 
   return (
-    <AuthContext.Provider value={{ signInWithGoogle, user }}>
+    <AuthContext.Provider value={{
+      signIn,
+      user,
+      isLoggedIn: !!user
+    }}>
       {children}
     </AuthContext.Provider>
   )
