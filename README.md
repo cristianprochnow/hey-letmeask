@@ -2,7 +2,9 @@
 
 ![author] [![event]][event-url] ![license]
 
- **An app to promote a quick and efficient interaction between the host and its subscribers.**
+ **🙋‍♂️ An app to promote a quick and efficient interaction between the host and its subscribers.**
+
+ **[▶ Demonstration][demo]**
 
 # 📖 About
 
@@ -65,3 +67,4 @@
 [github]: https//github.com/cristianprochnow
 [layout]: ./.github/thumbnail.png
 [layout-url]: https://www.figma.com/file/2B7Naq0YAR24BIkCR1HFIQ/Hey-LetMeAsk-Copy?node-id=45%3A29835
+[demo]: https://hey-letmeask.vercel.app/
