@@ -1,12 +1,12 @@
+import '../styles/components/Separator.css'
+
 type SeparatorProps = {
   title: string
 }
 
-import styles from '../styles/components/Separator.module.css'
-
 export function Separator({ title }: SeparatorProps) {
   return (
-    <span className={styles.separator}>
+    <span className="separator">
       {title}
     </span>
   )

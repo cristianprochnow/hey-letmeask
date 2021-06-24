@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
-import Image from 'next/image'
 
-import styles from '../styles/components/AsideContent.module.css'
+import '../styles/components/AsideContent.css'
 import illustrationImg from '../assets/images/illustration.svg'
 
 export function AsideContent() {
@@ -12,8 +11,8 @@ export function AsideContent() {
   const memoizedIllustration = useMemo(() => getIllustrationImg(illustrationImg), [])
 
   return (
-    <aside className={styles.asideContent}>
-      <Image
+    <aside className="asideContent">
+      <img
         src={memoizedIllustration}
         alt="Imagem que ilustra perguntas e respostas"
       />

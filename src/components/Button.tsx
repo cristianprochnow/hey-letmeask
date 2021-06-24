@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes } from 'react'
 
-import styles from '../styles/components/Button.module.css'
+import '../styles/components/Button.css'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 export function Button({ children, ...props }: ButtonProps) {
   return (
     <button
-      className={styles.button}
+      className="button"
       {...props}
     >
       {children}
