@@ -20,7 +20,6 @@
  [🔗 Click here to see the layout][layout-url]
 
  ## 🛠 Built with
- - [x] Next.js
  - [x] React.js
  - [x] Firebase
 
@@ -43,13 +42,13 @@
  4. Apply your data following the template below
  ```env
   # Firebase configuration
-  API_KEY=""
-  AUTH_DOMAIN=""
-  DATABASE_URL=""
-  PROJECT_ID=""
-  STORAGE_BUCKET=""
-  MESSAGING_SENDER_ID=""
-  APP_ID=""
+  REACT_APP_API_KEY=""
+  REACT_APP_AUTH_DOMAIN=""
+  REACT_APP_DATABASE_URL=""
+  REACT_APP_PROJECT_ID=""
+  REACT_APP_STORAGE_BUCKET=""
+  REACT_APP_MESSAGING_SENDER_ID=""
+  REACT_APP_APP_ID=""
  ```
  5. Save file
  6. 🎉 It's done! Now you are able to run the project
