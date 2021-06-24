@@ -38,7 +38,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }
 
   useEffect(() => {
-    auth.onAuthStateChanged(user => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
         const {
           displayName,
@@ -56,6 +56,8 @@ export function AuthProvider({ children }: AuthProviderProps) {
         })
       }
     })
+
+    return () => unsubscribe()
   }, [])
 
   return (
