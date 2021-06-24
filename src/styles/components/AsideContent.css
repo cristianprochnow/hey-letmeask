@@ -9,6 +9,10 @@
   background: var(--purple);
 }
 
+.asideContent > img {
+  width: 60%;
+}
+
 .asideContent h1 {
   margin-top: 4rem;
   font: 700 3.6rem 'Poppins', sans-serif;

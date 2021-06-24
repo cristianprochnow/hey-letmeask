@@ -9,7 +9,7 @@ type User = {
   avatar: string
 }
 type AuthContextType = {
-  user: User | undefined
+  user: User | null
   isLoggedIn: boolean
   signIn: () => Promise<void>
 }
@@ -20,17 +20,11 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User>({} as User)
+  const [user, setUser] = useState<User | null>(null)
 
   async function signIn() {
     try {
       const { name, avatar, id } = await signInWithGoogle()
-
-      console.table({
-        name,
-        avatar,
-        id
-      })
 
       setUser({
         id,

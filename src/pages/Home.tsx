@@ -12,11 +12,13 @@ import { useAuth } from '../hooks/useAuth'
 
 export function Home() {
   const history = useHistory()
-  const authentication = useAuth()
+  const { isLoggedIn, signIn } = useAuth()
 
   async function handleSignUpWithGoogle() {
-    await authentication.signIn()
-    // navigateToNewRoom()
+    if (!isLoggedIn)
+      await signIn()
+
+    navigateToNewRoom()
 
     function navigateToNewRoom() {
       history.push('/rooms/new')
