@@ -33,6 +33,26 @@
  ## 🧰 Prerequisites
  - [x] Node.js
  - [x] Yarn
+
+ ## 📐 Setup
+ You will need a `.env.local` file at your project root directory to use Firebase configuration. To set up this steps follow guide below:
+
+ 1. Create a Firebase account
+ 2. Create a new project
+ 3. Get auth configuration to connect with this web application
+ 4. Apply your data following the template below
+ ```env
+  # Firebase configuration
+  API_KEY=""
+  AUTH_DOMAIN=""
+  DATABASE_URL=""
+  PROJECT_ID=""
+  STORAGE_BUCKET=""
+  MESSAGING_SENDER_ID=""
+  APP_ID=""
+ ```
+ 5. Save file
+ 6. 🎉 It's done! Now you are able to run the project
  ## 🔥 Run project
  ```bash
  # install packages
