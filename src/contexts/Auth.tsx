@@ -10,7 +10,7 @@ type User = {
   avatar: string
 }
 type AuthContextType = {
-  user: User | null
+  user: User | undefined
   isLoggedIn: boolean
   signIn: () => Promise<void>
 }
@@ -21,7 +21,7 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextType)
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<User>()
 
   async function signIn() {
     try {

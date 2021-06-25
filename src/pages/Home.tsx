@@ -15,10 +15,14 @@ export function Home() {
   const { isLoggedIn, signIn } = useAuth()
 
   async function handleSignUpWithGoogle() {
-    if (!isLoggedIn)
-      await signIn()
+    try {
+      if (!isLoggedIn)
+        await signIn()
 
-    navigateToNewRoom()
+      navigateToNewRoom()
+    } catch (error) {
+      alert('Ooops... An error ocurred while signing up you account. Please, try again later. 😥')
+    }
 
     function navigateToNewRoom() {
       history.push('/rooms/new')
