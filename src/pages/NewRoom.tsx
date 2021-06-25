@@ -1,5 +1,5 @@
 import { useState, FormEvent, ChangeEvent } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import '../styles/pages/NewRoom.css'
 import logoImg from '../assets/images/logo.svg'
@@ -10,6 +10,7 @@ import { AsideContent } from '../components/AsideContent'
 import { useAuth } from '../hooks/useAuth'
 
 export function NewRoom() {
+  const history = useHistory()
   const { user } = useAuth()
   const [newRoomName, setNewRoomName] = useState('')
 
@@ -22,9 +23,13 @@ export function NewRoom() {
       return
 
     try {
-      await insertNewRoomIntoDatabase(newRoomName, user?.id as string)
+      const { key: createdRoomId } = await insertNewRoomIntoDatabase(
+        newRoomName,
+        user?.id as string
+      )
 
       alert('Room created successfully! 🎉')
+      navigateToRoom(createdRoomId as string)
     } catch (error) {
       alert('Oh, sorry 😖. An error ocurred at room creation.')
     }
@@ -37,13 +42,21 @@ export function NewRoom() {
       title: string,
       authorId: string
     ) {
-      const documentIndexName = 'rooms'
+      const databaseDocumentIndexName = 'rooms'
 
-      const roomRef = database.ref(documentIndexName)
-      await roomRef.push({
+      const roomRef = database.ref(databaseDocumentIndexName)
+      const firebaseRoom = await roomRef.push({
         title,
         authorId
       })
+
+      return firebaseRoom
+    }
+
+    function navigateToRoom(roomId: string) {
+      const roomRoute = `/rooms/${roomId}`
+
+      history.push(roomRoute)
     }
   }
 
