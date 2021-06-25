@@ -1,5 +1,6 @@
 import { useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi'
+import { ChangeEvent, FormEvent, useState } from 'react'
 
 import '../styles/pages/Home.css'
 import logoImg from '../assets/images/logo.svg'
@@ -9,9 +10,11 @@ import { Input } from '../components/Input'
 import { Separator } from '../components/Separator'
 import { AsideContent } from '../components/AsideContent'
 import { useAuth } from '../hooks/useAuth'
+import { database } from '../services/firebase'
 
 export function Home() {
   const history = useHistory()
+  const [roomCode, setRoomCode] = useState('')
   const { isLoggedIn, signIn } = useAuth()
 
   async function handleSignUpWithGoogle() {
@@ -27,6 +30,49 @@ export function Home() {
     function navigateToNewRoom() {
       history.push('/rooms/new')
     }
+  }
+
+  async function handleJoinRoom(event: FormEvent) {
+    resetFormBehavior()
+
+    const isRoomCodeEmpty = roomCode.trim() === ''
+
+    if (isRoomCodeEmpty) return
+
+    const roomRef = await getRoomData(roomCode)
+
+    if (!roomRef.exists()) {
+      alert('Ooops, this room does not exists. 😅')
+
+      return
+    }
+
+    navigateToRoom(roomCode)
+
+    function resetFormBehavior() {
+      event.preventDefault()
+    }
+
+    async function getRoomData(roomId: string) {
+      const roomPath = `/rooms/${roomId}`
+      const roomData = await database
+        .ref(roomPath)
+        .get()
+
+      return roomData
+    }
+
+    function navigateToRoom(roomId: string) {
+      const roomRoute = `/rooms/${roomId}`
+
+      history.push(roomRoute)
+    }
+  }
+
+  function handleChangeRoomCode(event: ChangeEvent<HTMLInputElement>) {
+    const { value } = event.target
+
+    setRoomCode(value)
   }
 
   return (
@@ -48,10 +94,12 @@ export function Home() {
             Crie sua conta com o Google
           </Button>
           <Separator title="ou entre em uma sala" />
-          <form>
+          <form onSubmit={handleJoinRoom}>
             <Input
               type="text"
               placeholder="Digite o código da sala"
+              value={roomCode}
+              onChange={handleChangeRoomCode}
             />
             <Button>
               <FiLogIn
