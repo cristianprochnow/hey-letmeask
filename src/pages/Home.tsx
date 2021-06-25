@@ -10,7 +10,7 @@ import { Input } from '../components/Input'
 import { Separator } from '../components/Separator'
 import { AsideContent } from '../components/AsideContent'
 import { useAuth } from '../hooks/useAuth'
-import { database } from '../services/firebase'
+import { getRoomData } from '../libs/firebase'
 
 export function Home() {
   const history = useHistory()
@@ -51,15 +51,6 @@ export function Home() {
 
     function resetFormBehavior() {
       event.preventDefault()
-    }
-
-    async function getRoomData(roomId: string) {
-      const roomPath = `/rooms/${roomId}`
-      const roomData = await database
-        .ref(roomPath)
-        .get()
-
-      return roomData
     }
 
     function navigateToRoom(roomId: string) {

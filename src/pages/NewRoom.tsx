@@ -3,11 +3,11 @@ import { Link, useHistory } from 'react-router-dom'
 
 import '../styles/pages/NewRoom.css'
 import logoImg from '../assets/images/logo.svg'
-import { database } from '../services/firebase'
 import { Button } from '../components/Button'
 import { Input } from '../components/Input'
 import { AsideContent } from '../components/AsideContent'
 import { useAuth } from '../hooks/useAuth'
+import { insertNewRoomIntoDatabase } from '../libs/firebase'
 
 export function NewRoom() {
   const history = useHistory()
@@ -36,21 +36,6 @@ export function NewRoom() {
 
     function resetFormBehavior() {
       event.preventDefault()
-    }
-
-    async function insertNewRoomIntoDatabase(
-      title: string,
-      authorId: string
-    ) {
-      const databaseDocumentIndexName = 'rooms'
-
-      const roomRef = database.ref(databaseDocumentIndexName)
-      const firebaseRoom = await roomRef.push({
-        title,
-        authorId
-      })
-
-      return firebaseRoom
     }
 
     function navigateToRoom(roomId: string) {
