@@ -5,10 +5,7 @@
   height: 5rem;
   padding: 0 1.6rem;
   gap: 1.2rem;
-  border: 0;
   border-radius: .8rem;
-  background-color: var(--purple);
-  color: var(--white-details);
   font-weight: 500;
   transition: filter .2s;
 }
@@ -20,4 +17,16 @@
 .button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.solid {
+  border: 0;
+  background-color: var(--purple);
+  color: var(--white-details);
+}
+
+.outline {
+  border: 1px solid var(--purple);
+  background-color: transparent;
+  color: var(--purple);
 }

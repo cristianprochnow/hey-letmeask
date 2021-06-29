@@ -34,6 +34,10 @@
   gap: .8rem;
 }
 
+.roomPage header .content div button:last-child {
+  height: 4rem;
+}
+
 .roomPage main {
   width: 90%;
   max-width: 800px;

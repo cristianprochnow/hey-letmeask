@@ -20,7 +20,7 @@ export function Room() {
           <img src={logoImg} alt="Hey! LetMeAsk logo" />
           <div>
             <RoomCodeButton roomCode={roomId} />
-            <Button>
+            <Button isOutline>
               Encerrar sala
             </Button>
           </div>
