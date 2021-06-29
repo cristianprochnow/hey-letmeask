@@ -83,36 +83,6 @@
   text-decoration: underline;
 }
 
-.emptyQuestionsAdvisor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 28rem;
-  margin: auto;
-  padding-top: 1.6rem;
-}
-
-.emptyQuestionsAdvisor img {
-  width: 15rem;
-  margin-bottom: 1.6rem;
-}
-
-.emptyQuestionsAdvisor strong {
-  text-align: center;
-
-  font: 600 1.8rem 'Poppins', sans-serif;
-  line-height: 3.2rem;
-}
-
-.emptyQuestionsAdvisor p {
-  text-align: center;
-  margin-top: .4rem;
-
-  font: 400 1.4rem 'Roboto', sans-serif;
-  line-height: 2rem;
-}
-
 @media (min-width: 768px) {
   .roomPage header .content div {
     flex-direction: row;
