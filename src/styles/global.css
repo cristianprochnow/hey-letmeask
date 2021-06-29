@@ -33,7 +33,7 @@ body {
   font-size: 1.6rem;
 }
 
-body, button, input, text {
+body, button, input, textarea {
   font: 400 1.6rem 'Roboto', sans-serif;
 }
 
