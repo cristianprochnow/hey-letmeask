@@ -59,22 +59,6 @@
   margin-bottom: 3.2rem;
 }
 
-.roomPage main form textarea {
-  min-height: 16rem;
-  padding: 1.6rem;
-
-  border-radius: .8rem;
-  border: 0;
-  background: var(--white-details);
-  color: var(--gray-dark);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  resize: vertical;
-}
-
-.roomPage main form textarea:focus {
-  outline-color: var(--purple);
-}
-
 .roomPage main form .formFooter {
   display: flex;
   flex-direction: column;

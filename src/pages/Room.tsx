@@ -5,6 +5,7 @@ import logoImg from '../assets/images/logo.svg'
 import emptyQuestionsImg from '../assets/images/empty-questions.svg'
 import { Button } from '../components/Button'
 import { RoomCodeButton } from '../components/RoomCodeButton'
+import { Textarea } from '../components/Textarea'
 
 type RoomParams = {
   id: string
@@ -31,7 +32,7 @@ export function Room() {
         <h1>Sala React Q&A</h1>
 
         <form>
-          <textarea
+          <Textarea
             placeholder="O que você quer perguntar?"
           />
           <div className="formFooter">

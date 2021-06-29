@@ -1,0 +1,15 @@
+.textarea {
+  min-height: 16rem;
+  padding: 1.6rem;
+
+  border-radius: .8rem;
+  border: 0;
+  background: var(--white-details);
+  color: var(--gray-dark);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  resize: vertical;
+}
+
+.textarea:focus {
+  outline-color: var(--purple);
+}
