@@ -11,12 +11,17 @@ export function Room() {
       <header>
         <div className="content">
           <img src={logoImg} alt="Hey! LetMeAsk logo" />
-          <button>
-            <FiCopy size={20} color="#FFF" />
-            <span>
-              Sala #-Md2Sddgo8KuWinzBwa8
-            </span>
-          </button>
+          <div>
+            <button>
+              <FiCopy size={20} color="#FFF" />
+              <span>
+                Sala #-Md2Sddgo8KuWinzBwa8
+              </span>
+            </button>
+            <Button>
+              Encerrar sala
+            </Button>
+          </div>
         </div>
       </header>
 
