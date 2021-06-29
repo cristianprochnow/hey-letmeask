@@ -1,23 +1,25 @@
-import { FiCopy } from 'react-icons/fi'
+import { useParams } from 'react-router-dom'
 
 import '../styles/pages/Room.css'
 import logoImg from '../assets/images/logo.svg'
 import emptyQuestionsImg from '../assets/images/empty-questions.svg'
 import { Button } from '../components/Button'
+import { RoomCodeButton } from '../components/RoomCodeButton'
+
+type RoomParams = {
+  id: string
+}
 
 export function Room() {
+  const { id: roomId }: RoomParams = useParams()
+
   return (
     <div className="roomPage">
       <header>
         <div className="content">
           <img src={logoImg} alt="Hey! LetMeAsk logo" />
           <div>
-            <button>
-              <FiCopy size={20} color="#FFF" />
-              <span>
-                Sala #-Md2Sddgo8KuWinzBwa8
-              </span>
-            </button>
+            <RoomCodeButton roomCode={roomId} />
             <Button>
               Encerrar sala
             </Button>
